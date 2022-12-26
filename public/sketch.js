@@ -8,7 +8,7 @@ var binFileData;
 var binPath;
 
 function preload() {
-  logoImage = loadImage('data/trigUpdaterImage.png');
+  logoImage = loadImage('data/espOTAUpdaterImage.png');
 }
 
 function setup() {
@@ -21,9 +21,9 @@ function setup() {
 
   //console.log('starting app');
 
-  chooseBinFileText = createElement('h4', 'Select BIN File from your Computer');
+  chooseBinFileText = createElement('h4', 'BIN DATEI AUSWAEHLEN');
   chooseBinFileText.position(15, 60);
-  latestBinFileButton = createButton('Get Latest Here');
+  latestBinFileButton = createButton('NEUESTE BIN DATEI HIER');
   latestBinFileButton.position(chooseBinFileText.x + chooseBinFileText.size().width+5, chooseBinFileText.y+chooseBinFileText.size().height+2);
   latestBinFileButton.mousePressed(latestBinFileButtonFunction);
 
@@ -32,13 +32,13 @@ function setup() {
   binFileInput.id('binFileInputID');
   
 
-  chooseIPText = createElement('h4', 'Enter IP Address for trigBoard');
+  chooseIPText = createElement('h4', 'IP ADRESSE EINGEBEN');
   chooseIPText.position(15, binFileInput.y+binFileInput.size().height);
   ipInput = createInput('192.168.0.133');
   ipInput.position(50, chooseIPText.y+chooseIPText.size().height+25); 
   ipInput.size(100);
 
-  startButton = createButton('START OTA UPDATE');
+  startButton = createButton('STARTE OTA UPDATE');
   startButton.position(50, ipInput.y+ipInput.size().height+25);
   startButton.style('color', color(255));
   startButton.style('background-color', color(61, 127, 78));
@@ -49,7 +49,7 @@ function setup() {
   statusText.position(15, startButton.y+10);
   statusText.id('statusTextID');
 
-  document.getElementById("statusTextID").innerHTML = "Make sure trigBoard is connected to WiFi and<br> OTA has been initialized from the Configurator";
+  document.getElementById("statusTextID").innerHTML = "Stellen Sie sicher, dass die Uhr mit dem WLAN verbunden ist und<br> OTA im Konfigurator initialisiert wurde";
 
   creditsText = createElement('sub', 'References:<br>esp-ota powered by this library: https://github.com/bitfocus/esp-ota<br>p5.js template: https://github.com/garciadelcastillo/p5js-electron-templates');
   creditsText.position(15, windowHeight-50);
@@ -69,7 +69,7 @@ function handleFile(file) {
   // }
 
   if (match(file.name, ".bin") == null){
-    alert("Wrong File Type!  Must be a .bin file");
+    alert("Falscher dateityp!  Muss eine .bin datei sein");
     return;
   }
 
@@ -105,16 +105,16 @@ var esp = new EspOTA(); // Optional arguments in this order: (bindAddress, bindP
 
 startButton.hide();
 
-document.getElementById("statusTextID").innerHTML = "Starting OTA";
+document.getElementById("statusTextID").innerHTML = "Starte OTA";
 
 esp.on('state', function (state) {
-  console.log("Current state of transfer: ", state);
-  document.getElementById("statusTextID").innerHTML = "Current state of transfer:  " + state;
+  console.log("Aktueller Übertragungsstatus: ", state);
+  document.getElementById("statusTextID").innerHTML = "Aktueller Übertragungsstatus:  " + state;
 });
 
 esp.on('progress', function (current, total) {
-  console.log("Transfer progress: " + Math.round(current / total * 100) + "%");
-  document.getElementById("statusTextID").innerHTML = "Transfer progress: " + Math.round(current / total * 100) + "%";
+  console.log("Übertragung läuft: " + Math.round(current / total * 100) + "%");
+  document.getElementById("statusTextID").innerHTML = "Fortschritt: " + Math.round(current / total * 100) + "%";
 });
 
 // If you need to authenticate, uncomment the following and change the password
@@ -124,13 +124,13 @@ var transfer = esp.uploadFile(binPath, ipInput.value(), 3232, EspOTA.FLASH);
 
 transfer
 .then(function () {
-  console.log("Done");
-  document.getElementById("statusTextID").innerHTML = "Done";
+  console.log("Abgeschlossen");
+  document.getElementById("statusTextID").innerHTML = "Abgeschlossen";
   startButton.show();
 })
 .catch(function (error) {
-  console.error("Transfer error: ", error);
-  document.getElementById("statusTextID").innerHTML = "Transfer error: " + error;
+  console.error("Übertragungsfehler: ", error);
+  document.getElementById("statusTextID").innerHTML = "Übertragungsfehler: " + error;
   startButton.show();
 });
 }
