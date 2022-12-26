@@ -1,7 +1,7 @@
 {
-    "name": "trigUpdater",
+    "name": "espOTAUpdater",
     "version": "1.0.0",
-    "description": "App to Easily Update trigBoard FW",
+    "description": "App to Easily Update esp32 board's FW",
     "main": "main.js",
     "scripts": {
         "start": "electron .",
@@ -26,7 +26,7 @@
         "demo",
         "p5.js"
     ],
-    "author": "Kevin Darrah",
+    "author": "Samuel Jahn",
     "license": "tbd",
     "devDependencies": {
         "electron": "^1.8.8",
