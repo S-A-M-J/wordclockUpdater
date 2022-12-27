@@ -29,7 +29,7 @@
     "author": "Samuel Jahn",
     "license": "tbd",
     "devDependencies": {
-        "electron": "^1.8.8",
+        "electron": "^22.0.0",
         "electron-builder": "^20.44.4",
         "electron-packager": "^15.3.0",
         "electron-rebuild": "^3.2.0",

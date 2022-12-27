@@ -8,7 +8,7 @@ var binFileData;
 var binPath;
 
 function preload() {
-  logoImage = loadImage('data/espOTAUpdaterImage.png');
+  logoImage = loadImage('data/wordclockUpdaterImage.png');
 }
 
 function setup() {
@@ -16,13 +16,12 @@ function setup() {
   createCanvas(500, 350);
   noStroke();
   background(255);
-  //logoImage = loadImage('data/trigUpdaterImage.png');
-  image(logoImage, 0, 0, 778/2, 166/2);
+  image(logoImage, 100, 5, 924/3, 290/3);
 
   //console.log('starting app');
 
-  chooseBinFileText = createElement('h4', 'BIN DATEI AUSWAEHLEN');
-  chooseBinFileText.position(15, 60);
+  chooseBinFileText = createElement('h4', 'BIN DATEI AUSWÄHLEN');
+  chooseBinFileText.position(15, 290/3+10);
   latestBinFileButton = createButton('NEUESTE BIN DATEI HIER');
   latestBinFileButton.position(chooseBinFileText.x + chooseBinFileText.size().width+5, chooseBinFileText.y+chooseBinFileText.size().height+2);
   latestBinFileButton.mousePressed(latestBinFileButtonFunction);
@@ -49,11 +48,7 @@ function setup() {
   statusText.position(15, startButton.y+10);
   statusText.id('statusTextID');
 
-  document.getElementById("statusTextID").innerHTML = "Stellen Sie sicher, dass die Uhr mit dem WLAN verbunden ist und<br> OTA im Konfigurator initialisiert wurde";
-
-  creditsText = createElement('sub', 'References:<br>esp-ota powered by this library: https://github.com/bitfocus/esp-ota<br>p5.js template: https://github.com/garciadelcastillo/p5js-electron-templates');
-  creditsText.position(15, windowHeight-50);
-
+  document.getElementById("statusTextID").innerHTML = "Stellen Sie sicher, dass die Uhr mit dem WLAN verbunden ist und<br> OTA im Chrome Browser Konfigurator initialisiert wurde";
 
 }
 
