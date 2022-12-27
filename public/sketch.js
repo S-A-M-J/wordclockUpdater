@@ -131,8 +131,7 @@ transfer
 }
 
 function latestBinFileButtonFunction(){
-  //window.open('https://krdarrah.github.io/trigBoardConfigurator/');
-  window.open('https://github.com/krdarrah/trigBoardV8_BaseFirmware/releases');
+  window.open('https://github.com/S-A-M-J/wordclock/releases');
 }
 
 function checkUserIPaddress(userIP) {
