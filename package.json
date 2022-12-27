@@ -8,9 +8,9 @@
         "pack": "build --dir",
         "dist": "build",
         "postinstall": "install-app-deps",
-        "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=/Users/kevindarrah/Documents/Electron/trigUpdater/icon.icns --prune=true --out=release-builds",
-        "package-win": "electron-packager . wordclockUpdater --overwrite --asar=true --platform=win32 --arch=ia32 --icon=/Users/kevindarrah/Documents/Electron/trigUpdater/icon.ico --prune=true --out=release-builds --version-string.CompanyName=KDC --version-string.FileDescription=KDC --version-string.ProductName=\"trigUpdater\"",
-        "package-linux": "electron-packager . wordclockUpdater --overwrite --asar=true --platform=linux --arch=x64 --icon=/Users/kevindarrah/Documents/Electron/trigUpdater/icon.png --prune=true --out=release-builds"
+        "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=/Users/sam/Documents/GitHub/wordclockUpdater/icon.icns --prune=true --out=release-builds",
+        "package-win": "electron-packager . wordclockUpdater --overwrite --asar=true --platform=win32 --arch=ia32 --icon=/Users/sam/Documents/GitHub/wordclockUpdater/icon.ico --prune=true --out=release-builds --version-string.CompanyName=KDC --version-string.FileDescription=KDC --version-string.ProductName=\"trigUpdater\"",
+        "package-linux": "electron-packager . wordclockUpdater --overwrite --asar=true --platform=linux --arch=x64 --icon=/Users/sam/Documents/GitHub/wordclockUpdater/icon.png --prune=true --out=release-builds"
     },
     "dependencies": {
         "chokidar": "^3.5.2",
