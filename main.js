@@ -37,7 +37,7 @@ function createWindow() {
     }))
 
     // Open the DevTools on start
-     mainWindow.webContents.openDevTools("undock")
+     //mainWindow.webContents.openDevTools("undock")
 
     // Emitted when the window is closed
     mainWindow.on('closed', function() {
