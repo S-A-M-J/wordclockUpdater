@@ -22,7 +22,11 @@ function createWindow() {
         // frame: false, 
          resizable: false,
         // alwaysOnTop: true,
-        useContentSize: true // when false, width/height will set the size of the whole app, including frames. If true, innerWindow will be set instead, resulting in a bigger app window
+        useContentSize: true, // when false, width/height will set the size of the whole app, including frames. If true, innerWindow will be set instead, resulting in a bigger app window
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation:false,
+        }
     })
 
     // Load the index.html of the app
