@@ -44,3 +44,4 @@ jspm_packages
 # packaged app
 build
 dist
+.DS_Store
